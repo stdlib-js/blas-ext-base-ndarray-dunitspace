@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Fill a one-dimensional double-precision floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from a specified value.
+* Fills a one-dimensional double-precision floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from a specified value.
 *
-* @module @stdlib/blas-ext-base-ndarray-dunitspace
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing a starting value.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var dunitspace = require( '@stdlib/blas-ext-base-ndarray-dunitspace' );
 *
 * var x = new Float64Vector( [ 0.0, 0.0, 0.0, 0.0 ] );
 * // returns <ndarray>[ 0.0, 0.0, 0.0, 0.0 ]
@@ -38,12 +49,9 @@
 * var out = dunitspace( [ x, start ] );
 * // returns <ndarray>[ 3.0, 4.0, 5.0, 6.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dunitspace( arrays: [ float64ndarray, float64ndarray ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dunitspace;
